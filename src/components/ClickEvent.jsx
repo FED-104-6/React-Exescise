@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Count() {
+function ClickEvent() {
     const [count, setCount] = useState(0);
     const [text, setText] = useState("");
   
@@ -23,4 +23,4 @@ function Count() {
     );
   }
 
-  export default Count;
+  export default ClickEvent;

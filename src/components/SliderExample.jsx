@@ -11,7 +11,7 @@ export default function SliderExample() {
   };
 
   return (
-    <Box sx={{ width: 300, margin: '20px auto' }}>
+    <Box style={{ width: 300, margin: '20px auto' }}>
       <Typography variant="h6" gutterBottom>
         Volume: {value}
       </Typography>
