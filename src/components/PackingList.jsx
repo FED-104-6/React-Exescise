@@ -3,5 +3,15 @@ function Item({ name, isPacked}) {
 }
 
 export default function PackingList() {
-    
+    return (
+        <section>
+            <h3>Wendy Ride's Packing List</h3>
+            <ul>
+                <Item 
+                    isPacked={true} 
+                    name="Space suit" 
+                />
+            </ul>
+        </section>
+    )
 }
