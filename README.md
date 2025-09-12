@@ -1,12 +1,82 @@
-# React + Vite
+# React Events
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To create this repository, here is what I did:
 
-Currently, two official plugins are available:
+```
+mkdir ReactEvents
+cd ReactEvents
+npm create vite@latest ../ReactEvents -- --template react
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Initialize Git Repository. 
+  
+```
+git init
+git add -A
+git commit -m 'Init Commit: 
+  Sets up React App to go over React Events exercises
 
-## Expanding the ESLint configuration
+  - Adds Readme
+  - Adds Vite React App
+  - Adds .gitignore
+'
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Read the fine manual
+
+[React Docs](https://react.dev/learn/responding-to-events)
+
+
+# Context Example
+
+[`useContext`](https://react.dev/reference/react/useContext) is a React hook that allows you to read and subscribe to context from your component.  
+  
+## Create the Context
+```js
+// UserContext.js
+import {createContext} from 'react';
+
+const UserContext = createContext();
+
+export default UserContext;
+```
+
+## Provide the Context
+```js
+// App.js
+import UserContext from './UserContext';
+
+function App() {
+  const user = {
+    name: 'Drew',
+    email: 'drew@example.com',
+  };
+
+  return (
+    <UserContext.Provider value={user}>
+      <Profile />
+    </UserContext.Provider>
+  );
+}
+
+export default App;
+```
+
+## Consume the Context
+```js
+// Profile.js
+import UserContext from './UserContext';
+
+function Profile() {
+  const user = useContext(UserContext);
+
+  return (
+    <div>
+      <h1>{user.name}</h1>
+      <p>{user.email}</p>
+    </div>
+  );
+}
+
+export default Profile;
+```

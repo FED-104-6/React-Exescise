@@ -1,36 +1,27 @@
+import { useState } from "react";
 import './App.css'
-import SecondCount from './components/SecondCount'
-import Counter from './components/Counter'
-import SliderExample from './components/SliderExample'
-import DeleteButton from './components/DeleteButton'
-import TextFields from './components/TextFields'
-import ClickEvent from './components/ClickEvent'
-import EventExample01 from './components/EventExample01'
-import EventExample02 from './components/EventExample02'
-import EventExample03 from './components/EventExample03'
-import EventExample04 from './components/EventExample04'
-import EventExample05 from './components/EventExample05'
-import PackingList from './components/PackingList'
+import Header from "./Header";
+import Exercise0909 from './header/Exescise0909' 
+import Exercise0910 from './header/Exescise0910'
+import Exercise0911 from './header/Exescise0911'
 
 function App() {
+  const [page, setPage] = useState("home");
+
   return (
     <>
-      <SecondCount />
-      <Counter />
-      <hr />
-      <SliderExample />
-      <DeleteButton />
-      <TextFields />
-      <hr />
-      <ClickEvent />
-      <hr />
-      <EventExample01 />
-      <EventExample02 />
-      <EventExample03 />
-      <EventExample04 />
-      <EventExample05 />
-      <hr />
-      <PackingList />
+      <Header setPage={setPage} />
+
+      {page === "home" && (
+        <div style={{ padding: "30px", fontSize: "20px", textAlign: "center" }}>
+          <h1>Hello!</h1> 
+          <p>Please click on the date above to view.</p>
+        </div>
+      )}
+
+      {page === "exercise0909" && <Exercise0909 />}
+      {page === "exercise0910" && <Exercise0910 />}
+      {page === "exercise0911" && <Exercise0911 />}
     </>
   )
 }
