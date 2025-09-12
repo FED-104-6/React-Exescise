@@ -9,8 +9,10 @@ function Exercise0910() {
     <>
       <SecondCount />
       <Counter />
+      <hr />
       <SliderExample />
       <DeleteButton />
+      <hr />
       <TextFields />
     </>
   );
